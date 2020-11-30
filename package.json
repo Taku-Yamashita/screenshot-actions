@@ -18,7 +18,9 @@
   "dependencies": {
     "@actions/artifact": "^0.4.1",
     "@actions/core": "^1.2.5",
+    "@actions/exec": "^1.0.4",
     "@actions/io": "^1.0.2",
+    "lighthouse": "^6.4.1",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.32",
     "puppeteer": "^5.5.0"
