@@ -1,10 +1,10 @@
 const core = require('@actions/core')
-const exec = require('@actions/exec')
 const io = require('@actions/io');
 const fs = require('fs');
 const old = 'images/old.png'
 const dest = `images/current.png`
 const { screenshot } = require('./page')
+const { report } = require('./lighthouse')
 
 async function run() {
   try {
@@ -15,8 +15,7 @@ async function run() {
     const url = core.getInput('url')
     core.info(`fetch ${url} screenshot`);
     await screenshot(url, dest);
-
-    exec.exec(`lighthouse ${url} --verbose --quiet --output html --output-path ./lighthouse/output.html`)
+    await report(url);
 
     core.setOutput('time', new Date().toTimeString());
   } catch (error) {
