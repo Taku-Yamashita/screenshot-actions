@@ -7,7 +7,6 @@ const dest = `images/current.png`
 const { screenshot } = require('./page')
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
-//const { report } = require('./lighthouse')
 
 async function run() {
   try {
@@ -25,8 +24,6 @@ async function run() {
     const runnerResult = await lighthouse(url, options);
     const reportHtml = runnerResult.report;
     fs.writeFileSync('lighthouse/report.html', reportHtml);
-
-
 
     core.setOutput('time', new Date().toTimeString());
   } catch (error) {
