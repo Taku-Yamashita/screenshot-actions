@@ -1,11 +1,12 @@
 const core = require('@actions/core')
+/*
 const io = require('@actions/io');
 const fs = require('fs');
 const old = 'images/old.png'
 const dest = `images/current.png`
 const { screenshot } = require('./page')
 const { report } = require('./lighthouse')
-
+*/
 async function run() {
   try {
     core.info(`start`);
