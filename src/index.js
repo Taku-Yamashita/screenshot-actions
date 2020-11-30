@@ -3,11 +3,12 @@ const io = require('@actions/io');
 const moment = require('moment-timezone');
 const puppeteer = require('puppeteer')
 const path = require("path")
+const fs = require('fs');
 
 async function run() {
   try {
     await io.rmRF('images/old.png');
-    await io.mv('images/current.png', 'images/old.png', {force: true});
+    if(fs.existsSync('images/current.png')) await io.mv('images/current.png', 'images/old.png');
     const url = core.getInput('url')
    //const now = moment().tz("Asia/Tokyo").format('YYYY-MM-DD_HH:mm:ss')
     const dest = `images/current.png`
