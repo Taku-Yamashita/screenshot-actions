@@ -4,16 +4,17 @@ const moment = require('moment-timezone');
 const puppeteer = require('puppeteer')
 const path = require("path")
 const fs = require('fs');
+const old = 'images/old.png'
+const dest = `images/current.png`
 
 async function run() {
   try {
-    await io.rmRF('images/old.png');
-    if(fs.existsSync('images/current.png')) {
-      await io.mv('images/current.png', 'images/old.png');
+    await io.rmRF(old);
+    if(fs.existsSync(dest)) {
+      await io.mv(dest, old);
     }
     const url = core.getInput('url')
    //const now = moment().tz("Asia/Tokyo").format('YYYY-MM-DD_HH:mm:ss')
-    const dest = `images/current.png`
     core.info(`fetch ${url} screenshot`);
     //core.info(`file name ${now}.png`)
 
