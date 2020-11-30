@@ -7,7 +7,7 @@ const path = require("path")
 async function run() {
   try {
     await io.rmRF('images/old.png');
-    await io.mv('images/current.png', 'images/old.png');
+    await io.mv('images/current.png', 'images/old.png', {force: true});
     const url = core.getInput('url')
    //const now = moment().tz("Asia/Tokyo").format('YYYY-MM-DD_HH:mm:ss')
     const dest = `images/current.png`
