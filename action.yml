@@ -1,0 +1,13 @@
+name: 'Screenshot'
+description: 'Take a screenshot'
+inputs:
+  url:
+    description: 'screenshot url'
+    required: true
+    default: 'https://www.google.com/'
+outputs:
+  time: # output will be available to future steps
+    description: 'The message to output'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

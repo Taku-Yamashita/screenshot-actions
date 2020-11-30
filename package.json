@@ -1,0 +1,35 @@
+{
+  "name": "github-actions-template",
+  "version": "1.0.0",
+  "description": "JavaScript Action Template",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "gulp --watch",
+    "lint": "eslint .",
+    "build": "webpack",
+    "test": "jest"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@actions/artifact": "^0.4.1",
+    "@actions/core": "^1.2.5",
+    "@actions/io": "^1.0.2",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32",
+    "puppeteer": "^5.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "gulp": "^4.0.2",
+    "husky": "^4.3.0",
+    "jest": "^26.1.0",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-stream": "^6.1.1"
+  }
+}
