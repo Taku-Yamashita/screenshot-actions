@@ -8,6 +8,7 @@ const { report } = require('./lighthouse')
 
 async function run() {
   try {
+    core.info(`start`);
     await io.rmRF(old);
     if(fs.existsSync(dest)) {
       await io.mv(dest, old);
