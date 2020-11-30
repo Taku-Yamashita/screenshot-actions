@@ -18,7 +18,7 @@ async function run() {
     core.info(`fetch ${url} screenshot`);
     await screenshot(url, dest);
      */
-    await report(url);
+    //await report(url);
 
 
     core.setOutput('time', new Date().toTimeString());
